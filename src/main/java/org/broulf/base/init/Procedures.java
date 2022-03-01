@@ -16,6 +16,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.broulf.base.init.transporter.BTransporter;
 
@@ -23,9 +26,12 @@ public class Procedures {
     // Change Dimension Procedure
     public static void changeDimension(Level level, Player player, LevelAccessor world) {
         ResourceKey<Level> targetDimension = Level.OVERWORLD;
-        int x = world.getLevelData().getXSpawn();
-        int y = world.getLevelData().getYSpawn();
-        int z = world.getLevelData().getZSpawn();
+        int x = player.getBlockX();
+        int y = player.getBlockY();
+        int z = player.getBlockZ();
+        BlockPos posBelow = player.getPosition().down();
+        BlockState blockStateBelow = player.level.getBlockState(posBelow);
+        Block below = blockStateBelow.getBlock();
 
         if(!level.isClientSide()) {
             if(!player.isCrouching()) {
@@ -36,11 +42,17 @@ public class Procedures {
                         System.out.println("The Player is currently in the Nether!");
                         System.out.println("Attempting to Teleport the player to the Overworld!");
                         player.changeDimension(overWorld, new BTransporter((ServerLevel) server.getLevel(targetDimension)));
+                        player.teleportTo(x * 8, y, z * 8);
+                        if (below.equals(Blocks.AIR)) {
+                            level.setBlock(Blocks.DIRT);
+                        }
                     } else if (player.level.dimension() == targetDimension) {
                         ServerLevel netherWorld = level.getServer().getLevel(Level.NETHER);
                         System.out.println("The Player is currently in the Overworld!");
                         System.out.println("Attempting to Teleport the player to the Nether!");
                         player.changeDimension(netherWorld, new BTransporter((ServerLevel) server.getLevel(Level.NETHER)));
+                        player.teleportTo(x / 8, y, z / 8);
+
                     }
                 }
             }

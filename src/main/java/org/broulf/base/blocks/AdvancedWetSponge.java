@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.broulf.base.init.ModBlocks;
 
 import java.util.Random;
 
@@ -48,7 +49,7 @@ public class AdvancedWetSponge extends Block {
     // Wet Sponge Stuff
     public void onPlace(BlockState blockState, Level level, BlockPos pos, BlockState stateBlock, boolean bool) {
         if (level.dimensionType().ultraWarm()) {
-            level.setBlock(pos, Blocks.SPONGE.defaultBlockState(), 3);
+            level.setBlock(pos, ModBlocks.ADVANCED_SPONGE.get().defaultBlockState(), 2);
             level.levelEvent(2009, pos, 0);
             level.playSound((Player)null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, (1.0F + level.getRandom().nextFloat() * 0.2F) * 0.7F);
         }
