@@ -1,0 +1,13 @@
+{
+  "item.basemod.advanced_item": "Advanced Thingy",
+  "item.basemod.base_item": "Base Thingy",
+  "item.basemod.lost_item": "Help, I'm Lost",
+  "item.basemod.nether_portal_transporter_item": "Nether Portal Transporter",
+
+  "itemGroup.base_tab": "Base Tab",
+
+  "block.basemod.advanced_sponge": "Advanced Sponge",
+  "block.basemod.advanced_lava_sponge": "Advanced Lava Sponge",
+  "block.basemod.lava_sponge": "Lava Sponge",
+  "block.basemod.base_block": "Base Block"
+}

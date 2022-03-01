@@ -1,0 +1,26 @@
+modLoader="javafml" #mandatory
+loaderVersion="[39,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license="All rights reserved"
+
+[[mods]]
+modId="basemod"
+version="0.0.1"
+displayName="Broulfs Base Mod"
+credits="IDEA, VSCODE, and MCreator for Examples on procedures and other cool things"
+displayURL="https://broulf.org"
+authors="Broulf"
+
+# A dependency.
+[[dependencies.basemod]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[39,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+# Here's another dependency
+[[dependencies.basemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.1,1.19)"
+    ordering="NONE"
+    side="BOTH"
