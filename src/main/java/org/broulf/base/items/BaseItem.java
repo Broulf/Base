@@ -24,9 +24,7 @@ import org.broulf.base.init.Procedures;
 public class BaseItem extends Item {
     // Basic Properties
     public BaseItem(Properties properties) {
-        super(properties
-                .durability(128)
-                .tab(BaseCreativeTab.BASE_TAB));
+        super(properties);
     }
 
     // Right click in air event

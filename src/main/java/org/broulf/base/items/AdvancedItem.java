@@ -32,9 +32,7 @@ import static net.minecraft.world.effect.MobEffect.*;
 public class AdvancedItem extends Item {
     // Item properties
     public AdvancedItem(Properties properties) {
-        super(properties
-                .durability(128)
-                .tab(BaseCreativeTab.BASE_TAB));
+        super(properties);
     }
 
     // Right click in air event

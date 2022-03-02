@@ -22,8 +22,7 @@ import java.util.function.Function;
 public class HelpLost extends Item {
 
     public HelpLost(Properties properties) {
-        super(properties
-                .tab(BaseCreativeTab.BASE_TAB));
+        super(properties);
     }
 
     @Override

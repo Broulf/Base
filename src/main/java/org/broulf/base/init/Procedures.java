@@ -29,9 +29,9 @@ public class Procedures {
         int x = player.getBlockX();
         int y = player.getBlockY();
         int z = player.getBlockZ();
-        BlockPos posBelow = player.getPosition().down();
-        BlockState blockStateBelow = player.level.getBlockState(posBelow);
-        Block below = blockStateBelow.getBlock();
+        int x1 = world.getLevelData().getXSpawn();
+        int y1 = world.getLevelData().getYSpawn();
+        int z1 = world.getLevelData().getZSpawn();
 
         if(!level.isClientSide()) {
             if(!player.isCrouching()) {
@@ -42,10 +42,7 @@ public class Procedures {
                         System.out.println("The Player is currently in the Nether!");
                         System.out.println("Attempting to Teleport the player to the Overworld!");
                         player.changeDimension(overWorld, new BTransporter((ServerLevel) server.getLevel(targetDimension)));
-                        player.teleportTo(x * 8, y, z * 8);
-                        if (below.equals(Blocks.AIR)) {
-                            level.setBlock(Blocks.DIRT);
-                        }
+                        player.teleportTo(x1, y1, z1);
                     } else if (player.level.dimension() == targetDimension) {
                         ServerLevel netherWorld = level.getServer().getLevel(Level.NETHER);
                         System.out.println("The Player is currently in the Overworld!");

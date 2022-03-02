@@ -12,8 +12,7 @@ import org.broulf.base.init.Procedures;
 public class NetherPortalTransporter extends Item {
 
     public NetherPortalTransporter(Properties properties) {
-        super(properties
-                .tab(BaseCreativeTab.BASE_TAB));
+        super(properties);
     }
 
     @Override

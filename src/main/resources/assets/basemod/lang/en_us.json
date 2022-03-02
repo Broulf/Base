@@ -6,9 +6,11 @@
 
   "itemGroup.base_tab": "Base Tab",
 
+  "block.basemod.base_block": "Base Block",
   "block.basemod.advanced_sponge": "Advanced Sponge",
-  "block.basemod.advanced_wet_sponge": "Advanced Wet Sponge",
-  "block.basemod.advanced_lava_sponge": "Advanced Lava Sponge",
+  "block.basemod.advanced_wet_sponge": "Wet Advanced Sponge",
   "block.basemod.lava_sponge": "Lava Sponge",
-  "block.basemod.base_block": "Base Block"
+  "block.basemod.lava_wet_sponge": "Wet Lava Sponge",
+  "block.basemod.advanced_lava_sponge": "Advanced Lava Sponge",
+  "block.basemod.advanced_lava_wet_sponge": "Wet Advanced Lava Sponge"
 }

@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.Vec3;
+import org.broulf.base.init.ModBlocks;
 
 import java.util.Queue;
 
@@ -68,6 +69,7 @@ public class AdvancedLavaSponge extends Block {
     }
     protected void tryAbsorbLava(Level level, BlockPos pos) {
         if (this.removeLavaBreadthFirstSearch(level, pos)) {
+            level.setBlock(pos, ModBlocks.ADVANCED_LAVA_WET_SPONGE.get().defaultBlockState(), 2);
             level.levelEvent(2001, pos, Block.getId(Blocks.LAVA.defaultBlockState()));
         }
     }

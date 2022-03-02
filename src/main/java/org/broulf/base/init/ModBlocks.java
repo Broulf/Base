@@ -13,10 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import org.broulf.base.BaseMod;
-import org.broulf.base.blocks.AdvancedLavaSponge;
-import org.broulf.base.blocks.AdvancedSponge;
-import org.broulf.base.blocks.AdvancedWetSponge;
-import org.broulf.base.blocks.LavaSponge;
+import org.broulf.base.blocks.*;
 
 import java.util.function.Supplier;
 
@@ -24,7 +21,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BaseMod.MOD_ID);
 
     public static final RegistryObject<Block> BASE_BLOCK = registerBlock("base_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.GRASS)),
+            () -> new BaseBlock(BlockBehaviour.Properties.of(Material.STONE)),
             BaseCreativeTab.BASE_TAB);
     public static final RegistryObject<Block> ADVANCED_SPONGE = registerBlock("advanced_sponge",
             () -> new AdvancedSponge(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.GRASS)),
@@ -35,8 +32,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> LAVA_SPONGE = registerBlock("lava_sponge",
             () -> new LavaSponge(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.GRASS)),
             BaseCreativeTab.BASE_TAB);
+    public static final RegistryObject<Block> LAVA_WET_SPONGE = registerBlock("lava_wet_sponge",
+            () -> new LavaWetSponge(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.GRASS)),
+            BaseCreativeTab.BASE_TAB);
     public static final RegistryObject<Block> ADVANCED_LAVA_SPONGE = registerBlock("advanced_lava_sponge",
             () -> new AdvancedLavaSponge(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.GRASS)),
+            BaseCreativeTab.BASE_TAB);
+    public static final RegistryObject<Block> ADVANCED_LAVA_WET_SPONGE = registerBlock("advanced_lava_wet_sponge",
+            () -> new AdvancedLavaWetSponge(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.GRASS)),
             BaseCreativeTab.BASE_TAB);
 
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

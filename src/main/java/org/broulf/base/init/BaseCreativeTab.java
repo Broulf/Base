@@ -15,6 +15,10 @@ public class BaseCreativeTab {
 
         @Override
         public void fillItemList(NonNullList<ItemStack> item) {
+            item.add(ModItems.BASE_ITEM.get().getDefaultInstance());
+            item.add(ModItems.ADVANCED_ITEM.get().getDefaultInstance());
+            item.add(ModItems.LOST_ITEM.get().getDefaultInstance());
+            item.add(ModItems.NETHER_PORTAL_TRANSPORTER_ITEM.get().getDefaultInstance());
             super.fillItemList(item);
         }
     };
